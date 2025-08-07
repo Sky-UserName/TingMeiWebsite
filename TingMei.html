@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>庭美装饰 - 品质生活从门窗开始</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s.coze.cn/image/4pzrlSHHdp0/');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .advantage-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-home text-blue-600 text-2xl mr-2"></i>
+                <span class="text-xl font-bold text-blue-600">开封庭美装饰工程有限公司</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition">首页</a>
+                <a href="#products" class="text-gray-700 hover:text-blue-600 transition">产品展示</a>
+                <a href="#advantages" class="text-gray-700 hover:text-blue-600 transition">品牌优势</a>
+                <!-- <a href="#join" class="text-gray-700 hover:text-blue-600 transition">招商加盟</a>
+                <a href="#news" class="text-gray-700 hover:text-blue-600 transition">新闻资讯</a> -->
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">联系方式</a>
+            </div>
+            
+            <button class="md:hidden text-gray-700 focus:outline-none" id="menuToggle">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div class="mobile-menu bg-white md:hidden" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="py-2 text-gray-700 hover:text-blue-600 transition">首页</a>
+                <a href="#products" class="py-2 text-gray-700 hover:text-blue-600 transition">产品展示</a>
+                <a href="#advantages" class="py-2 text-gray-700 hover:text-blue-600 transition">品牌优势</a>
+                <!-- <a href="#join" class="py-2 text-gray-700 hover:text-blue-600 transition">招商加盟</a>
+                <a href="#news" class="py-2 text-gray-700 hover:text-blue-600 transition">新闻资讯</a> -->
+                <a href="#contact" class="py-2 text-gray-700 hover:text-blue-600 transition">联系方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">品质生活 从门窗开始</h1>
+            <p class="text-xl md:text-2xl mb-8">专业门窗解决方案，为您打造舒适安全的家居环境</p>
+            <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition inline-block">查看产品</a>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">产品展示</h2>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">窗系列</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="product-card glassmorphism p-4 rounded-lg">
+                        <img src="https://s.coze.cn/image/LSSVxxdpBLE/" alt="现代风格窗户" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold mb-2">极简平开窗</h4>
+                        <p class="text-gray-600 mb-3">采用德国五金系统，密封性能优异，隔音隔热效果显著</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">¥1280/㎡起</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card glassmorphism p-4 rounded-lg">
+                        <img src="https://s.coze.cn/image/44oLx-11uQU/" alt="落地窗" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold mb-2">全景落地窗</h4>
+                        <p class="text-gray-600 mb-3">超大视野设计，钢化安全玻璃，抗风压性能卓越</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">¥1580/㎡起</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card glassmorphism p-4 rounded-lg">
+                        <img src="https://s.coze.cn/image/_T4jZUyIgmA/" alt="断桥铝窗户" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold mb-2">断桥铝窗</h4>
+                        <p class="text-gray-600 mb-3">节能环保，隔热隔音，多种颜色可选，经久耐用</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">¥1880/㎡起</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">门系列</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="product-card glassmorphism p-4 rounded-lg">
+                        <img src="https://s.coze.cn/image/X2FDn4hWFhQ/" alt="多瑙河畔窄扇推拉门" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold mb-2">多瑙河畔窄扇推拉门</h4>
+                        <p class="text-gray-600 mb-3">极窄边框设计，推拉顺畅，节省空间，美观实用</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">¥2580/㎡起</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card glassmorphism p-4 rounded-lg">
+                        <img src="https://s.coze.cn/image/C_LZ6oPhp8Y/" alt="入户门" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold mb-2">安全入户门</h4>
+                        <p class="text-gray-600 mb-3">防盗防撬，隔音保温，多种材质和款式可选</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">¥3280/扇起</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card glassmorphism p-4 rounded-lg">
+                        <img src="https://s.coze.cn/image/vCFCCN-pzSU/" alt="阳台门" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold mb-2">折叠阳台门</h4>
+                        <p class="text-gray-600 mb-3">灵活开合，节省空间，连接室内外，视野开阔</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">¥2980/㎡起</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">阳光房</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="product-card glassmorphism p-4 rounded-lg">
+                        <img src="https://s.coze.cn/image/0I4gVJGrgpc/" alt="天空之境阳光房" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold mb-2">天空之境阳光房</h4>
+                        <p class="text-gray-600 mb-3">全景玻璃设计，隔热防紫外线，打造舒适休闲空间</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">¥5800/㎡起</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card glassmorphism p-4 rounded-lg">
+                        <img src="https://s.coze.cn/image/mKAAqXWxUPk/" alt="露台阳光房" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold mb-2">露台阳光房</h4>
+                        <p class="text-gray-600 mb-3">模块化设计，安装便捷，防水防潮，四季可用</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">¥4800/㎡起</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌优势 -->
+    <section id="advantages" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">品牌优势</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glassmorphism p-6 rounded-lg text-center">
+                    <div class="advantage-icon mx-auto">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">卓越隔音性能</h3>
+                    <p class="text-gray-600">采用多层中空玻璃和优质密封材料，有效降低噪音40分贝以上</p>
+                </div>
+                
+                <div class="glassmorphism p-6 rounded-lg text-center">
+                    <div class="advantage-icon mx-auto">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">现代化生产基地</h3>
+                    <p class="text-gray-600">拥有10万平米现代化生产基地，年产能达50万平米</p>
+                </div>
+                
+                <div class="glassmorphism p-6 rounded-lg text-center">
+                    <div class="advantage-icon mx-auto">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">欧盟CE认证</h3>
+                    <p class="text-gray-600">产品通过欧盟CE认证，符合国际质量标准</p>
+                </div>
+                
+                <div class="glassmorphism p-6 rounded-lg text-center">
+                    <div class="advantage-icon mx-auto">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">全国800+门店</h3>
+                    <p class="text-gray-600">覆盖全国200多个城市，提供本地化服务</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 招商加盟 -->
+    <!-- <section id="join" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">招商加盟</h2>
+            
+            <div class="glassmorphism p-8 rounded-lg">
+                <h3 class="text-2xl font-semibold mb-6 text-center text-blue-600">8大赋能体系</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4 class="font-semibold">培训体系</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">提供产品知识、销售技巧、安装服务等全方位培训</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h4 class="font-semibold">数字化系统</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">提供ERP管理系统，助力门店高效运营</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-ad"></i>
+                            </div>
+                            <h4 class="font-semibold">营销支持</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">总部提供线上线下全方位营销支持</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4 class="font-semibold">物流配送</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">全国物流网络，确保产品及时送达</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4 class="font-semibold">安装服务</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">专业安装团队，确保产品完美呈现</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4 class="font-semibold">售后服务</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">24小时客服热线，快速响应客户需求</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="font-semibold">数据分析</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">提供市场数据分析，指导经营决策</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h4 class="font-semibold">金融支持</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">提供多种金融方案，降低加盟门槛</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition">立即申请加盟</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 新闻资讯 -->
+    <!-- <section id="news" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">新闻资讯</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glassmorphism p-6 rounded-lg">
+                    <img src="https://s.coze.cn/image/oMbcr3RE9SE/" alt="2025建博会" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-sm text-gray-500 mb-2">2025-03-15</div>
+                    <h3 class="text-xl font-semibold mb-3">2025建博会圆满落幕</h3>
+                    <p class="text-gray-600 mb-4">我司携最新产品亮相2025中国国际建筑装饰博览会，获得广泛关注...</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
+                        阅读更多 <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="glassmorphism p-6 rounded-lg">
+                    <img src="https://s.coze.cn/image/CaAh0LoOXes/" alt="新品发布会" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-sm text-gray-500 mb-2">2025-02-28</div>
+                    <h3 class="text-xl font-semibold mb-3">春季新品发布会成功举办</h3>
+                    <p class="text-gray-600 mb-4">我司在总部举办春季新品发布会，推出多款创新门窗产品...</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
+                        阅读更多 <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="glassmorphism p-6 rounded-lg">
+                    <img src="https://s.coze.cn/image/lOxGU5HYizc/" alt="设计师沙龙" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-sm text-gray-500 mb-2">2025-01-10</div>
+                    <h3 class="text-xl font-semibold mb-3">设计师沙龙活动圆满结束</h3>
+                    <p class="text-gray-600 mb-4">我司举办"门窗与空间设计"主题沙龙，与50多位设计师深入交流...</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
+                        阅读更多 <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center">
+                <button class="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-medium transition">查看更多新闻</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 联系方式 -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">联系我们</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glassmorphism p-8 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-6">联系方式</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">公司地址</h4>
+                                <p class="text-gray-600">河南省开封市尉氏县产业集聚区福聚路262号</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">联系电话</h4>
+                                <p class="text-gray-600">13513785551</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">电子邮箱</h4>
+                                <p class="text-gray-600">13513785551@163.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">工作时间</h4>
+                                <p class="text-gray-600">周一至周六 8:30-18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glassmorphism p-8 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-6">在线留言</h3>
+                    
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">您的姓名</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">联系电话</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">留言内容</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">提交留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-home text-blue-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">开封庭美装饰工程有限公司</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">品质生活 从门窗开始</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-weixin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-weibo text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-tiktok text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 开封庭美装饰工程有限公司 版权所有</p>
+                <p class="mt-2">created by <a href="https://space.coze.cn" class="text-blue-400 hover:text-blue-300 transition">开封庭美装饰工程有限公司</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // 如果是移动端菜单中的链接，点击后关闭菜单
+                if (window.innerWidth < 768) {
+                    document.getElementById('mobileMenu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
