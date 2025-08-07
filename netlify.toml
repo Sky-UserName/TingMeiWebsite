@@ -1,4 +1,4 @@
 [[redirects]]
-  from = 
-  to = TingMei.html
+  from = "/*"
+  to = "/TingMei.html"
   status = 200
